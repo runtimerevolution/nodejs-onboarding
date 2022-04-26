@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  html {
+    font-family: Poppins;
+  }
+}
+
+#__next {
+  @apply h-full w-full;
+}
+
+/* DocSearch Override */
+.DocSearch-Button {
+  width: 100% !important;
+  border-radius: 5px !important;
+  font-size: 14px !important;
+}
+
+.DocSearch-Button:active,
+.DocSearch-Button:focus,
+.DocSearch-Button:hover {
+  background: var(--docsearch-searchbox-background) !important;
+  box-shadow: none !important;
+}
+
+.DocSearch-Button-Placeholder {
+  font-size: 12px !important;
+}
+
+.DocSearch-Search-Icon {
+  height: 14px;
+  width: 14px;
+  color: gray !important;
+}
+
+.DocSearch-Button-Key {
+  font-size: 10px !important;
+}

@@ -1,0 +1,172 @@
+import Alert from 'components/Alert'
+import Indent from 'components/MDX/Indent'
+
+# macOS Setup
+
+<br />
+
+<Alert variant="disclaimer" title="Opinionated Content">
+    There will be some things on this guide that **do follow** the preference of the people who wrote it.
+
+    Everyone have their own preferences while setting up a new mac/pc, for example, i may prefer to use ***zsh*** as my default shell while you may prefer to use ***bash*** and this is totally fine.  This guide will give you some insights on how to setup your mac but feel free do use a different setup if you want to, specially if you are already familiarised with macOS and how to setup a NodeJS development environment.
+</Alert>
+
+
+## Package manager
+
+    macOS does not bundle with a package manager like other unix/linux distros (for example, centOS have  ***yum***, debian/ubuntu have ***aptitude***, etc).
+
+    Having a good package manager is very useful.  It will allow you to easily install, upgrade or remove software.
+
+    <Indent>
+        - #### Homebrew
+
+        One of the most used *(by far)* package managers for mac is [**Homebrew**](https://brew.sh/).
+
+        Let's install it.  Open up your terminal app of choice and run the following cmd:
+
+        ```bash
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        ```
+
+        Now that you have Homebrew installed, you can check if everything went well by running.
+
+        ```bash
+        brew doctor
+        ```
+
+        ##### So how do i use it?
+
+        Homebrew have two ways to install software. The command to use will depend on the software you want to install.
+        
+        For CLI (Command Line Interface) apps you can simply run:
+
+        ```bash
+        brew install [NAME_OF_THE_SOFTWARE]
+
+        # For example if you want to install wget
+
+        brew install wget
+        ```
+
+        For GUI (Graphical User Interface) apps we need to specify on the command that we want to install a Cask, not a Formulae, for that you can run:
+
+        ```bash
+        brew install --cask [NAME_OF_THE_SOFTWARE]
+
+        # For example if you want to install iterm2
+
+        brew install --cask iterm2
+        ```
+
+
+        - #### Alternatives
+
+        There are are a few alternatives to homebrew:
+        - [Macports](https://www.macports.org/)
+        - [Nix](https://nixos.org/)
+    </Indent>
+
+## Terminal App
+
+    The default macOS terminal app have some limitations, so you may want to install a more featured and customizable one.
+
+    <Indent>
+        - #### Iterm2   
+        The most used is probably [ITerm2](https://iterm2.com/).
+
+        The install process is very straight forward, just grab the binary from [https://iterm2.com/downloads.html](https://iterm2.com/downloads.html) and move it into your ***/Applications*** folder. 
+
+        Alternatively you can use Homebrew (that we previously installed) to also install desktop apps.  To do so you can run:
+
+        ```bash
+        brew install --cask iterm2
+        ```
+
+        - #### Alternatives
+
+        There are a few alternatives to both the default terminal app and iterm2, here are some of the most popular:
+        - [Alacritty](https://alacritty.org/)
+        - [Kitty](https://sw.kovidgoyal.net/kitty/)
+        - [Hyper](https://hyper.is/)
+    </Indent>
+
+
+## Shell
+
+    A Unix Shell is a command-line interpreter or shell that provides a command line interface for UNIX systems (like your macbook).  There are different Shells available so you can choose the one you want to use.
+
+    One of the most known is BASH (Bourne Again Shell), it is the default shell on most Linux distribution, and it was also the default shell on macOS until the release of macOS Catalina (10.15).  Since then the default shell on macOS have been changed to *zsh* so we'll assume that this is the one you have installed and set as default.
+
+    You can check your default shell by running: 
+
+    ```bash
+    echo $0
+    ```
+    
+    <br/>
+    You can choose to use the shell of your choice and follow the install steps of the one you pick.
+    <Indent>
+        
+        - #### Zsh (Z Shell)
+        If you don't have zsh (and want to switch to it) here's how to do it:
+
+        ```bash
+        brew install zsh && chsh -s $(which zsh)
+        ```
+       
+        A good way to bootstrap your zsh configuration (my favorit), is by installing **[oh-my-zsh](https://ohmyz.sh/)**.  Oh My ZSH is a framework to manage your zsh configuration.  You can read more about it [here](https://github.com/ohmyzsh/ohmyzsh/wiki)
+
+        To install *Oh My ZSH* run:
+
+        ```bash
+            sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+        ```
+
+        The install will create the necessary configuration files and you can edit them as you want.
+
+        <br />
+        - #### Alternatives
+        - [Fish](https://fishshell.com/)
+        - [Korn](http://kornshell.com/)    
+        </Indent>
+
+
+
+## Version Control System
+
+You'll certainly need a version control system to manage the code both you and your team produce.
+
+
+<Indent>
+    - #### Git
+
+    
+    
+    First things first, let's install it!
+
+    You probably already have git installed (it's bundled with macOs), however we can install it using Homebrew to guarantee that we are using an updated version.
+
+    By this time, you already know the drill ..
+
+    ```bash
+    brew install git
+    ```
+    
+    There are some additional customizations you need to do.
+
+    ```bash
+    git config --global user.name "Your Name"
+    git config --global user.email youremail@example.com
+    ```
+
+    <br />
+    #### “ Ok, that's great but what the hell is git ?? ”
+
+    Never heard of it?  Don't know how it works? 
+    Here are a few articles you should check:
+
+    - [https://git-scm.com/doc](https://git-scm.com/doc)
+    - [https://hackernoon.com/understanding-git-fcffd87c15a3](https://hackernoon.com/understanding-git-fcffd87c15a3)
+</Indent>
+

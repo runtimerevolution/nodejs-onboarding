@@ -1,0 +1,57 @@
+[
+    {
+      "id":"overview",
+      "title":"Overview",
+      "path":"/"
+    },
+    {
+      "id":"installation",
+      "title":"Installation",
+      "path":"/installation",
+      "redirectPath": "/installation/macos",
+      "routes":[
+        {
+          "id":"macOS",
+          "title":"MacOS",
+          "path":"/installation/macos"
+        },
+        {
+          "id":"node.js",
+          "title":"Node.js",
+          "path":"/installation/node"
+        },
+        {
+          "id":"editor",
+          "title":"Editor Setup",
+          "path":"/installation/editor"
+        }
+      ]
+    },
+    {
+      "id":"javascript",
+      "title":"Deeper into Javascript",
+      "path":"/javascript",
+      "routes":[
+        {
+          "id":"basics",
+          "title":"Basics of Javascript",
+          "path":"/javascript/basics"
+        },
+        {
+          "id":"es6",
+          "title":"EcmaScript 2019 🎉",
+          "path":"/javascript/es6" 
+        }
+      ]
+    },
+    {
+      "id":"node",
+      "title":"Node.js",
+      "path":"/node"
+    },
+    {
+      "id":"react",
+      "title":"React",
+      "path":"/react"
+    }
+  ]
